@@ -1,0 +1,67 @@
+﻿<Window x:Class="HuynhNguyenWPF.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HuynhNguyenWPF"
+        mc:Ignorable="d"
+        Title="Login" Height="520" Width="800"
+        ResizeMode="NoResize">
+    <Grid>
+        <Border BorderBrush="Black" BorderThickness="1">
+            <StackPanel Margin="224,46,224,46">
+                <TextBlock Foreground="Black" TextAlignment="Center" FontSize="30" FontWeight="Heavy" TextWrapping="Wrap">Car Management</TextBlock>
+                <TextBlock Foreground="Black" TextAlignment="Center" FontSize="15" FontWeight="Light" TextWrapping="Wrap" Margin="0,10,0,0">Please input email and password</TextBlock>
+                <TextBlock Foreground="Black" TextAlignment="Left" FontSize="15" FontWeight="Medium" TextWrapping="Wrap"
+                       Margin="0,50,0,0">
+                Email
+                </TextBlock>
+                <TextBox x:Name="txt_Email" TextAlignment="Left" FontSize="13" FontWeight="Medium" Foreground="Black"
+                        Background="Transparent" CaretBrush="Linen" BorderBrush="#CA9CCA" BorderThickness="0,0,0,1"
+                        Margin="0,5,0,0">
+                </TextBox>
+
+                <TextBlock Foreground="Black" TextAlignment="Left" FontSize="15" FontWeight="Medium" TextWrapping="Wrap"
+                       Margin="0,30,0,0">
+                Password
+                </TextBlock>
+                <PasswordBox x:Name="txt_Password" FontSize="13" FontWeight="Medium" Foreground="Black"
+                     Background="Transparent" CaretBrush="Linen" BorderBrush="#CA9CCA" BorderThickness="0,0,0,1"
+                     Margin="0,5,0,0">
+                </PasswordBox>
+
+                <Button x:Name="btn_Login" Content="Login" Foreground="Azure" FontWeight="Light"
+                    Margin="0,50,0,0" BorderThickness="0" Click="OnClickLogin">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#ff7477"></Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="true">
+                                    <Setter Property="Background" Value="#FF9B8E"></Setter>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="true">
+                                    <Setter Property="Background" Value="#FFD7D1"></Setter>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="150" Height="40" Background="{TemplateBinding Background}" CornerRadius="10">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <TextBlock Foreground="Black" TextAlignment="Center" FontSize="15" FontWeight="Light" TextWrapping="Wrap" Margin="0,10,0,0">
+                    <Hyperlink Click="OnClickRegister">No account? Create one now</Hyperlink>
+                </TextBlock>
+                
+            </StackPanel>
+        </Border>
+
+    </Grid>
+</Window>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="AdminView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CarEditor.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CustomerView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ManagerView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="OrderEditor.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserEditor.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="AdminView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CarEditor.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CustomerView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ManagerView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="OrderEditor.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserEditor.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>
