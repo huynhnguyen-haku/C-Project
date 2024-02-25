@@ -182,15 +182,18 @@ namespace HuynhNguyenWPF
 
         private void ShowOrderReportRaw()
         {
-            ReportView.ItemsSource = _listOrder;
-            TotalProfit.Text = _listOrder.Sum(p => p.Total).ToString();
+            var filteredList = _listOrder.Where(p => p.OrderStatus != "Shipping" && p.OrderStatus != "CANCEL");
+            ReportView.ItemsSource = filteredList;
+            TotalProfit.Text = filteredList.Sum(p => p.Total).ToString();
         }
 
         private void ShowOrderRenameSort()
         {
-            var sortedList = _listOrder.OrderByDescending(p => p.Total).ToList();
+            var filteredList = _listOrder.Where(p => p.OrderStatus != "Shipping" && p.OrderStatus != "CANCEL");
+            var sortedList = filteredList.OrderByDescending(p => p.Total).ToList();
             ReportView.ItemsSource = sortedList;
         }
+
 
         private void LoadDataReport()
         {
@@ -199,6 +202,7 @@ namespace HuynhNguyenWPF
             {
                 MessageBox.Show(message, "ERROR");
             }
+            _listOrder = _listOrder.Where(order => order.OrderStatus != "Shipping" && order.OrderStatus != "CANCEL").ToList();
         }
 
         private void LoadAndShowAllCar()
